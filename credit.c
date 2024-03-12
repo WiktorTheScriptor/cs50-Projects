@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 
+// Checks credit card company using first 1 or 2 digits and the length of the number
+// Checks credit card validity using Luhn's algorithm
+
 bool check(long card);
 
 int main(void)
@@ -10,7 +13,7 @@ int main(void)
     // check if propper number
     int test = card / 1000000000000;
     string type = "INVALID\n";         // sets invalid default incase no if condition is true
-    if (test == 4 || test / 1000 == 4) // visa
+    if (test == 4 || test / 1000 == 4) // VISA
     {
         type = "VISA\n";
     }
@@ -18,7 +21,7 @@ int main(void)
     {
         type = "AMEX\n";
     }
-    else if ((test / 100 >= 51) && (test / 100 <= 55)) // MASTER
+    else if ((test / 100 >= 51) && (test / 100 <= 55)) // MASTERCARD
     {
         type = "MASTERCARD\n";
     }
